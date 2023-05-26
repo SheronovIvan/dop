@@ -1,0 +1,28 @@
+echo " i =	3;"  | ./cc.py
+echo " { a=3; b=5; }"  | ./cc.py
+echo " { a = 1; b = 2; c = a + b; }"  | ./cc.py
+echo " { a = 5; b = 2; c = a - b; }"  | ./cc.py
+echo " { a = 5; b = 2; c = b < a; }"  | ./cc.py
+echo " { a = 5; if (a < 10) a = 33; }"  | ./cc.py
+echo " { a = 5; if (10 < a) a = 33; else { a = 1; b = 2; } }"  | ./cc.py
+echo " { a = 10; do { a = a - 2;}  while (3 < a); }" | ./cc.py
+echo " { a = 1; b = 5; while (a < b) { a = a + 3; }}" | ./cc.py
+program fibonacci;
+
+var
+  n, i: integer;
+  a, b, c: integer;
+  n := 5
+begin
+  print('Fibonacci Series:');
+  a := 0;
+  b := 1;
+  write(a, ' ', b, ' ');
+  for i := 3 to n do
+  begin
+    c := a + b;
+    write(c, ' ');
+    a := b;
+    b := c;
+  end;
+end.
